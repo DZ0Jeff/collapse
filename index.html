@@ -1,62 +1,28 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Toggle icons</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h3 class="border-bottom border-dark">Quem somos <span class="float-right" id="teste" onclick="changeIcon()">+</span></h3>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </head>
-
-    <body>
-
-        <div class="container">
-            <!-- Construção -->
-            <h3 class="display-5 pb-3 border-bottom border-dark text-uppercase adictional how" data-toggle="collapse" data-target="#how" aria-expanded="true">Como pedir? +</h3>
-
-            <div id="how" class="collapse">
-                <p>Construção</p>
-            </div>
-
-            <!-- Quem pode -->
-            <h3 class="display-5 border-bottom pb-3 border-dark adictional quem-pode" data-toggle="collapse"
-                data-target="#collapse" aria-expanded="true">QUEM PODE +</h3>
-            <div id="collapse" class="collapse">
-                <p> * Aposentados e Pensionistas do INSS</p>
-                <p> * Servidores Municipais e Estaduais</p>
-                <p> * Exército </p>
-                <p>	* Marinha </p>
-                <p>	* Aeronáutica </p>
-            </div>
-            
-            <!-- Centro -->
-            <p class="border-bottom text-uppercase border-dark px-3 demo" data-toggle="collapse" data-target="#demo" aria-expanded="true">Centro - Arujá <span class="float-right">+</span></p>
-
-            <div id="demo" class="collapse show">
-                <p class="px-3">Av. Antonio Afonso de Lima, 623 - Centro - Arujá</p>
-                <p class="px-3 custom-mb">Fone e WhatsApp (11) 4651-2889</p>
-            </div>
-        </div>
-
         <script>
-            function setCollapse(id, target, msgHide, msgShow){
-                $(id).on("hide.bs.collapse", function () {
-                    $(target).html(msgHide);
-                });
-                $(id).on("show.bs.collapse", function () {
-                    $(target).html(msgShow);
-                });
+            function changeIcon() {
+                var x = document.getElementById("teste");
+                if (x.innerHTML === "-") {
+                    x.innerHTML = "+";
+                } else {
+                    x.innerHTML = "-";
+                }
             }
-
-            $(document).ready(function () {
-                setCollapse('#collapse','.quem-pode','QUEM PODE +', 'QUEM PODE - ')
-                setCollapse('#how','.how','Como pedir? +', 'Como pedir? -')
-                setCollapse('#demo','.demo','Centro - Arujá <span class="float-right">+</span>', 'Centro - Arujá <span class="float-right">-</span>')
-            });
-            
         </script>
-
     </body>
-
 </html>
